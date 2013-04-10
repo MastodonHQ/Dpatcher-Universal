@@ -24,16 +24,19 @@ using namespace std;
 
 
 int main(int argc,char ** argv){
-/*if(argc<=1){
-cout<<"What am I operating on thin air? Give me a file damn it preferably your save.dats they taste like cookies :D.\n";
-exit(0);
-}
-*/
-//else{
+
 fstream destinia;
 destinia.open("test.dat",fstream::in | fstream::out | fstream::binary);
 unsigned int d;
-
+if(destinia.is_open())
+{
+  cout << "test.dat has opened properly." << endl;
+}
+else
+{
+  cout << "Failed to open test.dat properly: Is the file in the current path ?(the path the binary is in)" << endl;
+  return -404; //classic file not found error kind of appropriate don't you guys think XD
+}
 cout<<"Beginning Patch Mode.\n";
 cout<<"Patching Level/Exp.\n";
 
